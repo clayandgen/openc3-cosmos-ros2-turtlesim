@@ -1,0 +1,127 @@
+{
+  "_comment": "Standard Turtlebot3 (burger/waffle) topic surface. Captured offline; regenerate with helpers/discover_ros2.sh against a live bot.",
+  "topics": [
+    {
+      "name": "/scan",
+      "type": "sensor_msgs/msg/LaserScan",
+      "iface": {
+        "type_name": "sensor_msgs/msg/LaserScan",
+        "fields": [
+          {"name": "header",           "ros_type": "std_msgs/Header", "is_array": false, "array_size": null, "is_complex": true},
+          {"name": "angle_min",        "ros_type": "float32", "is_array": false, "array_size": null, "is_complex": false},
+          {"name": "angle_max",        "ros_type": "float32", "is_array": false, "array_size": null, "is_complex": false},
+          {"name": "angle_increment",  "ros_type": "float32", "is_array": false, "array_size": null, "is_complex": false},
+          {"name": "time_increment",   "ros_type": "float32", "is_array": false, "array_size": null, "is_complex": false},
+          {"name": "scan_time",        "ros_type": "float32", "is_array": false, "array_size": null, "is_complex": false},
+          {"name": "range_min",        "ros_type": "float32", "is_array": false, "array_size": null, "is_complex": false},
+          {"name": "range_max",        "ros_type": "float32", "is_array": false, "array_size": null, "is_complex": false},
+          {"name": "ranges",           "ros_type": "float32", "is_array": true,  "array_size": null, "is_complex": false},
+          {"name": "intensities",      "ros_type": "float32", "is_array": true,  "array_size": null, "is_complex": false}
+        ],
+        "response_fields": [],
+        "feedback_fields": []
+      }
+    },
+    {
+      "name": "/odom",
+      "type": "nav_msgs/msg/Odometry",
+      "iface": {
+        "type_name": "nav_msgs/msg/Odometry",
+        "fields": [
+          {"name": "header",          "ros_type": "std_msgs/Header",                "is_array": false, "array_size": null, "is_complex": true},
+          {"name": "child_frame_id",  "ros_type": "string",                         "is_array": false, "array_size": null, "is_complex": false},
+          {"name": "pose",            "ros_type": "geometry_msgs/PoseWithCovariance",  "is_array": false, "array_size": null, "is_complex": true},
+          {"name": "twist",           "ros_type": "geometry_msgs/TwistWithCovariance", "is_array": false, "array_size": null, "is_complex": true}
+        ],
+        "response_fields": [],
+        "feedback_fields": []
+      }
+    },
+    {
+      "name": "/imu",
+      "type": "sensor_msgs/msg/Imu",
+      "iface": {
+        "type_name": "sensor_msgs/msg/Imu",
+        "fields": [
+          {"name": "header",                       "ros_type": "std_msgs/Header",          "is_array": false, "array_size": null, "is_complex": true},
+          {"name": "orientation",                  "ros_type": "geometry_msgs/Quaternion", "is_array": false, "array_size": null, "is_complex": true},
+          {"name": "orientation_covariance",       "ros_type": "float64",                  "is_array": true,  "array_size": 9,    "is_complex": false},
+          {"name": "angular_velocity",             "ros_type": "geometry_msgs/Vector3",    "is_array": false, "array_size": null, "is_complex": true},
+          {"name": "angular_velocity_covariance",  "ros_type": "float64",                  "is_array": true,  "array_size": 9,    "is_complex": false},
+          {"name": "linear_acceleration",          "ros_type": "geometry_msgs/Vector3",    "is_array": false, "array_size": null, "is_complex": true},
+          {"name": "linear_acceleration_covariance","ros_type":"float64",                  "is_array": true,  "array_size": 9,    "is_complex": false}
+        ],
+        "response_fields": [],
+        "feedback_fields": []
+      }
+    },
+    {
+      "name": "/battery_state",
+      "type": "sensor_msgs/msg/BatteryState",
+      "iface": {
+        "type_name": "sensor_msgs/msg/BatteryState",
+        "fields": [
+          {"name": "header",                "ros_type": "std_msgs/Header", "is_array": false, "array_size": null, "is_complex": true},
+          {"name": "voltage",               "ros_type": "float32",         "is_array": false, "array_size": null, "is_complex": false},
+          {"name": "temperature",           "ros_type": "float32",         "is_array": false, "array_size": null, "is_complex": false},
+          {"name": "current",               "ros_type": "float32",         "is_array": false, "array_size": null, "is_complex": false},
+          {"name": "charge",                "ros_type": "float32",         "is_array": false, "array_size": null, "is_complex": false},
+          {"name": "capacity",              "ros_type": "float32",         "is_array": false, "array_size": null, "is_complex": false},
+          {"name": "design_capacity",       "ros_type": "float32",         "is_array": false, "array_size": null, "is_complex": false},
+          {"name": "percentage",            "ros_type": "float32",         "is_array": false, "array_size": null, "is_complex": false},
+          {"name": "power_supply_status",   "ros_type": "uint8",           "is_array": false, "array_size": null, "is_complex": false},
+          {"name": "power_supply_health",   "ros_type": "uint8",           "is_array": false, "array_size": null, "is_complex": false},
+          {"name": "power_supply_technology","ros_type":"uint8",           "is_array": false, "array_size": null, "is_complex": false},
+          {"name": "present",               "ros_type": "bool",            "is_array": false, "array_size": null, "is_complex": false},
+          {"name": "location",              "ros_type": "string",          "is_array": false, "array_size": null, "is_complex": false},
+          {"name": "serial_number",         "ros_type": "string",          "is_array": false, "array_size": null, "is_complex": false}
+        ],
+        "response_fields": [],
+        "feedback_fields": []
+      }
+    },
+    {
+      "name": "/joint_states",
+      "type": "sensor_msgs/msg/JointState",
+      "iface": {
+        "type_name": "sensor_msgs/msg/JointState",
+        "fields": [
+          {"name": "header",   "ros_type": "std_msgs/Header", "is_array": false, "array_size": null, "is_complex": true},
+          {"name": "name",     "ros_type": "string",          "is_array": true,  "array_size": null, "is_complex": false},
+          {"name": "position", "ros_type": "float64",         "is_array": true,  "array_size": null, "is_complex": false},
+          {"name": "velocity", "ros_type": "float64",         "is_array": true,  "array_size": null, "is_complex": false},
+          {"name": "effort",   "ros_type": "float64",         "is_array": true,  "array_size": null, "is_complex": false}
+        ],
+        "response_fields": [],
+        "feedback_fields": []
+      }
+    },
+    {
+      "name": "/cmd_vel",
+      "type": "geometry_msgs/msg/Twist",
+      "iface": {
+        "type_name": "geometry_msgs/msg/Twist",
+        "fields": [
+          {"name": "linear",  "ros_type": "geometry_msgs/Vector3", "is_array": false, "array_size": null, "is_complex": true},
+          {"name": "angular", "ros_type": "geometry_msgs/Vector3", "is_array": false, "array_size": null, "is_complex": true}
+        ],
+        "response_fields": [],
+        "feedback_fields": []
+      }
+    }
+  ],
+  "services": [
+    {
+      "name": "/reset",
+      "type": "std_srvs/srv/Empty",
+      "iface": {
+        "type_name": "std_srvs/srv/Empty",
+        "fields": [],
+        "response_fields": [],
+        "feedback_fields": []
+      }
+    }
+  ],
+  "actions": [],
+  "params": []
+}

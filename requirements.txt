@@ -1,0 +1,2 @@
+# No extra Python deps — uses OpenC3's built-in TCP interface +
+# terminated_protocol. Add packages here if your procedures need them.
