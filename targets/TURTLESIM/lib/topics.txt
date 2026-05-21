@@ -1,0 +1,7 @@
+# Auto-generated subscription list. One topic per line; type after whitespace.
+/turtle1/cmd_vel geometry_msgs/msg/Twist
+/turtle1/color_sensor turtlesim/msg/Color
+/turtle1/pose turtlesim/msg/Pose
+/turtle2/cmd_vel geometry_msgs/msg/Twist
+/turtle2/color_sensor turtlesim/msg/Color
+/turtle2/pose turtlesim/msg/Pose

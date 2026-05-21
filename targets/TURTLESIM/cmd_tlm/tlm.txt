@@ -1,0 +1,131 @@
+# ROS2 Telemetry Definitions — auto-generated
+# Each topic = one TELEMETRY packet, routed by $.topic ID item.
+
+# ============================================================================
+# /turtle1/cmd_vel  [geometry_msgs/msg/Twist]
+# ============================================================================
+TELEMETRY TURTLESIM TURTLE1_CMD_VEL BIG_ENDIAN "ROS2 topic /turtle1/cmd_vel"
+  ACCESSOR JsonAccessor
+  TEMPLATE '{"op": "publish", "topic": "/turtle1/cmd_vel", "msg": {"linear": {"x": 0.0, "y": 0.0, "z": 0.0}, "angular": {"x": 0.0, "y": 0.0, "z": 0.0}}}'
+  APPEND_ID_ITEM TOPIC 0 STRING "/turtle1/cmd_vel" "Source topic"
+    KEY $.topic
+  APPEND_ITEM OP 0 STRING "rosbridge op"
+    KEY $.op
+  APPEND_ITEM LINEAR_X 64 FLOAT "float64"
+    KEY $.msg.linear.x
+  APPEND_ITEM LINEAR_Y 64 FLOAT "float64"
+    KEY $.msg.linear.y
+  APPEND_ITEM LINEAR_Z 64 FLOAT "float64"
+    KEY $.msg.linear.z
+  APPEND_ITEM ANGULAR_X 64 FLOAT "float64"
+    KEY $.msg.angular.x
+  APPEND_ITEM ANGULAR_Y 64 FLOAT "float64"
+    KEY $.msg.angular.y
+  APPEND_ITEM ANGULAR_Z 64 FLOAT "float64"
+    KEY $.msg.angular.z
+
+# ============================================================================
+# /turtle1/color_sensor  [turtlesim/msg/Color]
+# ============================================================================
+TELEMETRY TURTLESIM TURTLE1_COLOR_SENSOR BIG_ENDIAN "ROS2 topic /turtle1/color_sensor"
+  ACCESSOR JsonAccessor
+  TEMPLATE '{"op": "publish", "topic": "/turtle1/color_sensor", "msg": {"r": 0, "g": 0, "b": 0}}'
+  APPEND_ID_ITEM TOPIC 0 STRING "/turtle1/color_sensor" "Source topic"
+    KEY $.topic
+  APPEND_ITEM OP 0 STRING "rosbridge op"
+    KEY $.op
+  APPEND_ITEM R 8 UINT "uint8"
+    KEY $.msg.r
+  APPEND_ITEM G 8 UINT "uint8"
+    KEY $.msg.g
+  APPEND_ITEM B 8 UINT "uint8"
+    KEY $.msg.b
+
+# ============================================================================
+# /turtle1/pose  [turtlesim/msg/Pose]
+# ============================================================================
+TELEMETRY TURTLESIM TURTLE1_POSE BIG_ENDIAN "ROS2 topic /turtle1/pose"
+  ACCESSOR JsonAccessor
+  TEMPLATE '{"op": "publish", "topic": "/turtle1/pose", "msg": {"x": 0.0, "y": 0.0, "theta": 0.0, "linear_velocity": 0.0, "angular_velocity": 0.0}}'
+  APPEND_ID_ITEM TOPIC 0 STRING "/turtle1/pose" "Source topic"
+    KEY $.topic
+  APPEND_ITEM OP 0 STRING "rosbridge op"
+    KEY $.op
+  APPEND_ITEM X 32 FLOAT "float32"
+    KEY $.msg.x
+  APPEND_ITEM Y 32 FLOAT "float32"
+    KEY $.msg.y
+  APPEND_ITEM THETA 32 FLOAT "float32"
+    KEY $.msg.theta
+    UNITS "Radians" rad
+  APPEND_ITEM LINEAR_VELOCITY 32 FLOAT "float32"
+    KEY $.msg.linear_velocity
+    UNITS "Meters_per_second" m/s
+  APPEND_ITEM ANGULAR_VELOCITY 32 FLOAT "float32"
+    KEY $.msg.angular_velocity
+    UNITS "Radians_per_second" rad/s
+
+# ============================================================================
+# /turtle2/cmd_vel  [geometry_msgs/msg/Twist]
+# ============================================================================
+TELEMETRY TURTLESIM TURTLE2_CMD_VEL BIG_ENDIAN "ROS2 topic /turtle2/cmd_vel"
+  ACCESSOR JsonAccessor
+  TEMPLATE '{"op": "publish", "topic": "/turtle2/cmd_vel", "msg": {"linear": {"x": 0.0, "y": 0.0, "z": 0.0}, "angular": {"x": 0.0, "y": 0.0, "z": 0.0}}}'
+  APPEND_ID_ITEM TOPIC 0 STRING "/turtle2/cmd_vel" "Source topic"
+    KEY $.topic
+  APPEND_ITEM OP 0 STRING "rosbridge op"
+    KEY $.op
+  APPEND_ITEM LINEAR_X 64 FLOAT "float64"
+    KEY $.msg.linear.x
+  APPEND_ITEM LINEAR_Y 64 FLOAT "float64"
+    KEY $.msg.linear.y
+  APPEND_ITEM LINEAR_Z 64 FLOAT "float64"
+    KEY $.msg.linear.z
+  APPEND_ITEM ANGULAR_X 64 FLOAT "float64"
+    KEY $.msg.angular.x
+  APPEND_ITEM ANGULAR_Y 64 FLOAT "float64"
+    KEY $.msg.angular.y
+  APPEND_ITEM ANGULAR_Z 64 FLOAT "float64"
+    KEY $.msg.angular.z
+
+# ============================================================================
+# /turtle2/color_sensor  [turtlesim/msg/Color]
+# ============================================================================
+TELEMETRY TURTLESIM TURTLE2_COLOR_SENSOR BIG_ENDIAN "ROS2 topic /turtle2/color_sensor"
+  ACCESSOR JsonAccessor
+  TEMPLATE '{"op": "publish", "topic": "/turtle2/color_sensor", "msg": {"r": 0, "g": 0, "b": 0}}'
+  APPEND_ID_ITEM TOPIC 0 STRING "/turtle2/color_sensor" "Source topic"
+    KEY $.topic
+  APPEND_ITEM OP 0 STRING "rosbridge op"
+    KEY $.op
+  APPEND_ITEM R 8 UINT "uint8"
+    KEY $.msg.r
+  APPEND_ITEM G 8 UINT "uint8"
+    KEY $.msg.g
+  APPEND_ITEM B 8 UINT "uint8"
+    KEY $.msg.b
+
+# ============================================================================
+# /turtle2/pose  [turtlesim/msg/Pose]
+# ============================================================================
+TELEMETRY TURTLESIM TURTLE2_POSE BIG_ENDIAN "ROS2 topic /turtle2/pose"
+  ACCESSOR JsonAccessor
+  TEMPLATE '{"op": "publish", "topic": "/turtle2/pose", "msg": {"x": 0.0, "y": 0.0, "theta": 0.0, "linear_velocity": 0.0, "angular_velocity": 0.0}}'
+  APPEND_ID_ITEM TOPIC 0 STRING "/turtle2/pose" "Source topic"
+    KEY $.topic
+  APPEND_ITEM OP 0 STRING "rosbridge op"
+    KEY $.op
+  APPEND_ITEM X 32 FLOAT "float32"
+    KEY $.msg.x
+  APPEND_ITEM Y 32 FLOAT "float32"
+    KEY $.msg.y
+  APPEND_ITEM THETA 32 FLOAT "float32"
+    KEY $.msg.theta
+    UNITS "Radians" rad
+  APPEND_ITEM LINEAR_VELOCITY 32 FLOAT "float32"
+    KEY $.msg.linear_velocity
+    UNITS "Meters_per_second" m/s
+  APPEND_ITEM ANGULAR_VELOCITY 32 FLOAT "float32"
+    KEY $.msg.angular_velocity
+    UNITS "Radians_per_second" rad/s
+

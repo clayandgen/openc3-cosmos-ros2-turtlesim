@@ -1,109 +1,82 @@
-# openc3-cosmos-ros2-turtlebot
+# openc3-cosmos-ros2-turtlesim
 
-OpenC3 COSMOS plugin for **TurtleBot3** (Burger / Waffle) running ROS2.
-Bridges to the bot over [`rosbridge_suite`](https://github.com/RobotWebTools/rosbridge_suite)
-(TCP transport) and exposes the standard sensor topics as COSMOS telemetry plus
-`/cmd_vel` publishing and the `/reset` service as commands.
+<p align="center">
+  <img src="public/store_img.png" alt="openc3-cosmos-ros2-turtlesim" />
+</p>
 
-> **This plugin was generated from the
-> [openc3-cosmos-ros2](https://github.com/clayandgen/openc3-cosmos-ros2)
-> scaffolding project.** The discovery + generator scripts in that repo
-> produced everything under `targets/TURTLEBOT/cmd_tlm/` and the vendored
-> `targets/TURTLEBOT/lib/rosbridge_subscribe_protocol.py`. Use that repo to
-> regenerate definitions when the bot's topic set changes, or to bootstrap a
-> plugin for a different ROS2 robot.
+OpenC3 COSMOS plugin for **turtlesim** running on ROS2.
+Bridges via [`rosbridge_suite`](https://github.com/RobotWebTools/rosbridge_suite)
+(WebSocket transport).
 
-## Topics covered
+> Generated from [openc3-cosmos-ros2](https://github.com/clayandgen/openc3-cosmos-ros2).
+> Use that repo to regenerate when the topic set changes.
 
-| Direction | Topic / Service   | Type                              |
-| --------- | ----------------- | --------------------------------- |
-| TLM       | `/scan`           | `sensor_msgs/msg/LaserScan`       |
-| TLM       | `/odom`           | `nav_msgs/msg/Odometry`           |
-| TLM       | `/imu`            | `sensor_msgs/msg/Imu`             |
-| TLM       | `/battery_state`  | `sensor_msgs/msg/BatteryState`    |
-| TLM       | `/joint_states`   | `sensor_msgs/msg/JointState`      |
-| TLM + CMD | `/cmd_vel`        | `geometry_msgs/msg/Twist`         |
-| CMD (srv) | `/reset`          | `std_srvs/srv/Empty`              |
+## Discovered interfaces
 
-The full subscription list lives in `targets/TURTLEBOT/lib/topics.txt`.
+| Direction | Name | Type |
+| --------- | ---- | ---- |
+| TLM + CMD | `/turtle1/cmd_vel` | `geometry_msgs/msg/Twist` |
+| TLM | `/turtle1/color_sensor` | `turtlesim/msg/Color` |
+| TLM + CMD | `/turtle1/pose` | `turtlesim/msg/Pose` |
+| CMD (srv) | `/clear` | `std_srvs/srv/Empty` |
+| CMD (srv) | `/kill` | `turtlesim/srv/Kill` |
+| CMD (srv) | `/reset` | `std_srvs/srv/Empty` |
+| CMD (srv) | `/spawn` | `turtlesim/srv/Spawn` |
+| CMD (srv) | `/turtle1/set_pen` | `turtlesim/srv/SetPen` |
+| CMD (srv) | `/turtle1/teleport_absolute` | `turtlesim/srv/TeleportAbsolute` |
+| CMD (srv) | `/turtle1/teleport_relative` | `turtlesim/srv/TeleportRelative` |
+| CMD (act) | `/turtle1/rotate_absolute` | `turtlesim/action/RotateAbsolute` |
 
-## On the TurtleBot host
+Parameters (background RGB, holonomic, etc.) are also exposed as GET/SET commands.
+
+## Setup
+
+On the ROS2 host:
 
 ```bash
-# Install rosbridge once
 sudo apt install ros-${ROS_DISTRO}-rosbridge-suite
-
-# Bring up TurtleBot3 (your usual launch), then start the bridge:
 source /opt/ros/${ROS_DISTRO}/setup.bash
-ros2 launch rosbridge_server rosbridge_tcp.launch.xml
-# rosbridge_tcp listens on tcp://0.0.0.0:9090 by default
-# Each JSON envelope is null-terminated; this plugin uses
-# OpenC3's terminated_protocol to frame the stream.
+ros2 run turtlesim turtlesim_node
+ros2 launch rosbridge_server rosbridge_websocket_launch.xml
 ```
 
-If COSMOS runs on a different machine from the bot, replace
-`host.docker.internal` in `plugin.txt` with the bot's IP (and open port 9090
-on the host).
-
-## Install into OpenC3 COSMOS
+## Install into COSMOS
 
 ```bash
 rake build VERSION=0.0.1
-# upload openc3-cosmos-ros2-turtlebot-0.0.1.gem via Admin → Plugins
+# Upload openc3-cosmos-ros2-turtlesim-0.0.1.gem via Admin → Plugins
 ```
 
-When prompted, leave the variables at defaults unless rosbridge_tcp runs on a
-different host / port:
+Plugin variables (set defaults or override at install):
 
-- `ros2_target_name` = `TURTLEBOT`
-- `rosbridge_host`   = `host.docker.internal` (macOS / Windows Docker)
-- `rosbridge_port`   = `9090` (rosbridge_tcp default)
+- `rosbridge_host` — host running rosbridge (default: `host.docker.internal`)
+- `rosbridge_port` — WebSocket port (default: `9090`)
 
-## Drive the bot from COSMOS
+## Example usage
 
 In Script Runner:
 
 ```python
-cmd("TURTLEBOT CMD_VEL_PUB with LINEAR '{\"x\":0.2,\"y\":0,\"z\":0}', " \
-    "ANGULAR '{\"x\":0,\"y\":0,\"z\":0.5}'")
+# Publish a velocity command
+cmd("TURTLESIM TURTLE1_CMD_VEL_PUB with LINEAR '{\"x\":2.0,\"y\":0,\"z\":0}', ANGULAR '{\"x\":0,\"y\":0,\"z\":1.8}'")
+
+# Teleport the turtle
+cmd("TURTLESIM TURTLE1_TELEPORT_ABSOLUTE_SRV with X 5.0, Y 5.0, THETA 0.0")
+
+# Clear the drawing
+cmd("TURTLESIM CLEAR_SRV")
 ```
 
-Or call the reset service:
-
-```python
-cmd("TURTLEBOT RESET_SRV")
-```
-
-## Regenerate against a live bot
-
-Standard topic set was captured offline (`manifest.turtlebot3.json`). If your
-TurtleBot exposes extra topics (Nav2, slam_toolbox, custom nodes), regenerate
-with the live discovery:
+## Regenerate
 
 ```bash
-# From the openc3-cosmos-ros2 checkout, with ROS2 sourced and bot running:
-./helpers/discover_ros2.sh \
-  --target TURTLEBOT \
-  --out-dir /path/to/openc3-cosmos-ros2-turtlebot/targets/TURTLEBOT/cmd_tlm \
-  --topics-file /path/to/openc3-cosmos-ros2-turtlebot/targets/TURTLEBOT/lib/topics.txt
-```
-
-## Layout
-
-```
-plugin.txt                                # COSMOS plugin config + variables
-requirements.txt                          # pip deps (websocket-client)
-manifest.turtlebot3.json                  # canned manifest for offline regen
-targets/TURTLEBOT/
-  target.txt
-  cmd_tlm/cmd.txt                         # generated commands
-  cmd_tlm/tlm.txt                         # generated telemetry
-  lib/rosbridge_subscribe_protocol.py     # vendored from openc3-cosmos-ros2
-  lib/topics.txt                          # subscription list (one per line)
-  procedures/example.py                   # sample drive / reset script
-  screens/status.txt                      # minimal status screen
+cd ../openc3-cosmos-ros2
+./bin/scaffold-ros2-plugin \
+  --target TURTLESIM \
+  --out ../openc3-cosmos-ros2-turtlesim \
+  --discover --force
 ```
 
 ## License
 
-MIT. See [LICENSE.txt](LICENSE.txt).
+MIT.

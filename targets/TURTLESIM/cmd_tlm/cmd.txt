@@ -1,0 +1,326 @@
+# ROS2 Command Definitions — auto-generated
+# Topics -> publish, services -> call_service, actions -> send_action_goal.
+
+# ============================================================================
+# publish /turtle1/cmd_vel  [geometry_msgs/msg/Twist]
+# ============================================================================
+COMMAND TURTLESIM TURTLE1_CMD_VEL_PUB BIG_ENDIAN "Publish to /turtle1/cmd_vel"
+  ACCESSOR JsonAccessor
+  TEMPLATE '{"op": "publish", "topic": "/turtle1/cmd_vel", "msg": {"linear": {"x": 0.0, "y": 0.0, "z": 0.0}, "angular": {"x": 0.0, "y": 0.0, "z": 0.0}}}'
+  APPEND_PARAMETER _OP 0 STRING "publish" "rosbridge op"
+    KEY $.op
+  APPEND_PARAMETER _TOPIC 0 STRING "/turtle1/cmd_vel" "Target topic"
+    KEY $.topic
+  APPEND_PARAMETER LINEAR_X 64 FLOAT MIN MAX 0.0 "float64"
+    KEY $.msg.linear.x
+  APPEND_PARAMETER LINEAR_Y 64 FLOAT MIN MAX 0.0 "float64"
+    KEY $.msg.linear.y
+  APPEND_PARAMETER LINEAR_Z 64 FLOAT MIN MAX 0.0 "float64"
+    KEY $.msg.linear.z
+  APPEND_PARAMETER ANGULAR_X 64 FLOAT MIN MAX 0.0 "float64"
+    KEY $.msg.angular.x
+  APPEND_PARAMETER ANGULAR_Y 64 FLOAT MIN MAX 0.0 "float64"
+    KEY $.msg.angular.y
+  APPEND_PARAMETER ANGULAR_Z 64 FLOAT MIN MAX 0.0 "float64"
+    KEY $.msg.angular.z
+
+# ============================================================================
+# publish /turtle1/color_sensor  [turtlesim/msg/Color]
+# ============================================================================
+COMMAND TURTLESIM TURTLE1_COLOR_SENSOR_PUB BIG_ENDIAN "Publish to /turtle1/color_sensor"
+  ACCESSOR JsonAccessor
+  TEMPLATE '{"op": "publish", "topic": "/turtle1/color_sensor", "msg": {"r": 0, "g": 0, "b": 0}}'
+  APPEND_PARAMETER _OP 0 STRING "publish" "rosbridge op"
+    KEY $.op
+  APPEND_PARAMETER _TOPIC 0 STRING "/turtle1/color_sensor" "Target topic"
+    KEY $.topic
+  APPEND_PARAMETER R 8 UINT 0 255 0 "uint8"
+    KEY $.msg.r
+  APPEND_PARAMETER G 8 UINT 0 255 0 "uint8"
+    KEY $.msg.g
+  APPEND_PARAMETER B 8 UINT 0 255 0 "uint8"
+    KEY $.msg.b
+
+# ============================================================================
+# publish /turtle1/pose  [turtlesim/msg/Pose]
+# ============================================================================
+COMMAND TURTLESIM TURTLE1_POSE_PUB BIG_ENDIAN "Publish to /turtle1/pose"
+  ACCESSOR JsonAccessor
+  TEMPLATE '{"op": "publish", "topic": "/turtle1/pose", "msg": {"x": 0.0, "y": 0.0, "theta": 0.0, "linear_velocity": 0.0, "angular_velocity": 0.0}}'
+  APPEND_PARAMETER _OP 0 STRING "publish" "rosbridge op"
+    KEY $.op
+  APPEND_PARAMETER _TOPIC 0 STRING "/turtle1/pose" "Target topic"
+    KEY $.topic
+  APPEND_PARAMETER X 32 FLOAT MIN MAX 0.0 "float32"
+    KEY $.msg.x
+  APPEND_PARAMETER Y 32 FLOAT MIN MAX 0.0 "float32"
+    KEY $.msg.y
+  APPEND_PARAMETER THETA 32 FLOAT MIN MAX 0.0 "float32"
+    KEY $.msg.theta
+    UNITS "Radians" rad
+  APPEND_PARAMETER LINEAR_VELOCITY 32 FLOAT MIN MAX 0.0 "float32"
+    KEY $.msg.linear_velocity
+    UNITS "Meters_per_second" m/s
+  APPEND_PARAMETER ANGULAR_VELOCITY 32 FLOAT MIN MAX 0.0 "float32"
+    KEY $.msg.angular_velocity
+    UNITS "Radians_per_second" rad/s
+
+# ============================================================================
+# publish /turtle2/cmd_vel  [geometry_msgs/msg/Twist]
+# ============================================================================
+COMMAND TURTLESIM TURTLE2_CMD_VEL_PUB BIG_ENDIAN "Publish to /turtle2/cmd_vel"
+  ACCESSOR JsonAccessor
+  TEMPLATE '{"op": "publish", "topic": "/turtle2/cmd_vel", "msg": {"linear": {"x": 0.0, "y": 0.0, "z": 0.0}, "angular": {"x": 0.0, "y": 0.0, "z": 0.0}}}'
+  APPEND_PARAMETER _OP 0 STRING "publish" "rosbridge op"
+    KEY $.op
+  APPEND_PARAMETER _TOPIC 0 STRING "/turtle2/cmd_vel" "Target topic"
+    KEY $.topic
+  APPEND_PARAMETER LINEAR_X 64 FLOAT MIN MAX 0.0 "float64"
+    KEY $.msg.linear.x
+  APPEND_PARAMETER LINEAR_Y 64 FLOAT MIN MAX 0.0 "float64"
+    KEY $.msg.linear.y
+  APPEND_PARAMETER LINEAR_Z 64 FLOAT MIN MAX 0.0 "float64"
+    KEY $.msg.linear.z
+  APPEND_PARAMETER ANGULAR_X 64 FLOAT MIN MAX 0.0 "float64"
+    KEY $.msg.angular.x
+  APPEND_PARAMETER ANGULAR_Y 64 FLOAT MIN MAX 0.0 "float64"
+    KEY $.msg.angular.y
+  APPEND_PARAMETER ANGULAR_Z 64 FLOAT MIN MAX 0.0 "float64"
+    KEY $.msg.angular.z
+
+# ============================================================================
+# publish /turtle2/color_sensor  [turtlesim/msg/Color]
+# ============================================================================
+COMMAND TURTLESIM TURTLE2_COLOR_SENSOR_PUB BIG_ENDIAN "Publish to /turtle2/color_sensor"
+  ACCESSOR JsonAccessor
+  TEMPLATE '{"op": "publish", "topic": "/turtle2/color_sensor", "msg": {"r": 0, "g": 0, "b": 0}}'
+  APPEND_PARAMETER _OP 0 STRING "publish" "rosbridge op"
+    KEY $.op
+  APPEND_PARAMETER _TOPIC 0 STRING "/turtle2/color_sensor" "Target topic"
+    KEY $.topic
+  APPEND_PARAMETER R 8 UINT 0 255 0 "uint8"
+    KEY $.msg.r
+  APPEND_PARAMETER G 8 UINT 0 255 0 "uint8"
+    KEY $.msg.g
+  APPEND_PARAMETER B 8 UINT 0 255 0 "uint8"
+    KEY $.msg.b
+
+# ============================================================================
+# publish /turtle2/pose  [turtlesim/msg/Pose]
+# ============================================================================
+COMMAND TURTLESIM TURTLE2_POSE_PUB BIG_ENDIAN "Publish to /turtle2/pose"
+  ACCESSOR JsonAccessor
+  TEMPLATE '{"op": "publish", "topic": "/turtle2/pose", "msg": {"x": 0.0, "y": 0.0, "theta": 0.0, "linear_velocity": 0.0, "angular_velocity": 0.0}}'
+  APPEND_PARAMETER _OP 0 STRING "publish" "rosbridge op"
+    KEY $.op
+  APPEND_PARAMETER _TOPIC 0 STRING "/turtle2/pose" "Target topic"
+    KEY $.topic
+  APPEND_PARAMETER X 32 FLOAT MIN MAX 0.0 "float32"
+    KEY $.msg.x
+  APPEND_PARAMETER Y 32 FLOAT MIN MAX 0.0 "float32"
+    KEY $.msg.y
+  APPEND_PARAMETER THETA 32 FLOAT MIN MAX 0.0 "float32"
+    KEY $.msg.theta
+    UNITS "Radians" rad
+  APPEND_PARAMETER LINEAR_VELOCITY 32 FLOAT MIN MAX 0.0 "float32"
+    KEY $.msg.linear_velocity
+    UNITS "Meters_per_second" m/s
+  APPEND_PARAMETER ANGULAR_VELOCITY 32 FLOAT MIN MAX 0.0 "float32"
+    KEY $.msg.angular_velocity
+    UNITS "Radians_per_second" rad/s
+
+# ============================================================================
+# call_service /clear  [std_srvs/srv/Empty]
+# ============================================================================
+COMMAND TURTLESIM CLEAR_SRV BIG_ENDIAN "Call service /clear"
+  ACCESSOR JsonAccessor
+  TEMPLATE '{"op": "call_service", "service": "/clear", "args": {}}'
+  APPEND_PARAMETER _OP 0 STRING "call_service" "rosbridge op"
+    KEY $.op
+  APPEND_PARAMETER _SERVICE 0 STRING "/clear" "Service name"
+    KEY $.service
+
+# ============================================================================
+# call_service /kill  [turtlesim/srv/Kill]
+# ============================================================================
+COMMAND TURTLESIM KILL_SRV BIG_ENDIAN "Call service /kill"
+  ACCESSOR JsonAccessor
+  TEMPLATE '{"op": "call_service", "service": "/kill", "args": {"name": ""}}'
+  APPEND_PARAMETER _OP 0 STRING "call_service" "rosbridge op"
+    KEY $.op
+  APPEND_PARAMETER _SERVICE 0 STRING "/kill" "Service name"
+    KEY $.service
+  APPEND_PARAMETER NAME 0 STRING "" "string"
+    KEY $.args.name
+
+# ============================================================================
+# call_service /reset  [std_srvs/srv/Empty]
+# ============================================================================
+COMMAND TURTLESIM RESET_SRV BIG_ENDIAN "Call service /reset"
+  ACCESSOR JsonAccessor
+  TEMPLATE '{"op": "call_service", "service": "/reset", "args": {}}'
+  APPEND_PARAMETER _OP 0 STRING "call_service" "rosbridge op"
+    KEY $.op
+  APPEND_PARAMETER _SERVICE 0 STRING "/reset" "Service name"
+    KEY $.service
+
+# ============================================================================
+# call_service /spawn  [turtlesim/srv/Spawn]
+# ============================================================================
+COMMAND TURTLESIM SPAWN_SRV BIG_ENDIAN "Call service /spawn"
+  ACCESSOR JsonAccessor
+  TEMPLATE '{"op": "call_service", "service": "/spawn", "args": {"x": 0.0, "y": 0.0, "theta": 0.0, "name": ""}}'
+  APPEND_PARAMETER _OP 0 STRING "call_service" "rosbridge op"
+    KEY $.op
+  APPEND_PARAMETER _SERVICE 0 STRING "/spawn" "Service name"
+    KEY $.service
+  APPEND_PARAMETER X 32 FLOAT MIN MAX 0.0 "float32"
+    KEY $.args.x
+  APPEND_PARAMETER Y 32 FLOAT MIN MAX 0.0 "float32"
+    KEY $.args.y
+  APPEND_PARAMETER THETA 32 FLOAT MIN MAX 0.0 "float32"
+    KEY $.args.theta
+    UNITS "Radians" rad
+  APPEND_PARAMETER NAME 0 STRING "" "string"
+    KEY $.args.name
+
+# ============================================================================
+# call_service /turtle1/set_pen  [turtlesim/srv/SetPen]
+# ============================================================================
+COMMAND TURTLESIM TURTLE1_SET_PEN_SRV BIG_ENDIAN "Call service /turtle1/set_pen"
+  ACCESSOR JsonAccessor
+  TEMPLATE '{"op": "call_service", "service": "/turtle1/set_pen", "args": {"r": 0, "g": 0, "b": 0, "width": 0, "off": 0}}'
+  APPEND_PARAMETER _OP 0 STRING "call_service" "rosbridge op"
+    KEY $.op
+  APPEND_PARAMETER _SERVICE 0 STRING "/turtle1/set_pen" "Service name"
+    KEY $.service
+  APPEND_PARAMETER R 8 UINT 0 255 0 "uint8"
+    KEY $.args.r
+  APPEND_PARAMETER G 8 UINT 0 255 0 "uint8"
+    KEY $.args.g
+  APPEND_PARAMETER B 8 UINT 0 255 0 "uint8"
+    KEY $.args.b
+  APPEND_PARAMETER WIDTH 8 UINT 0 255 0 "uint8"
+    KEY $.args.width
+  APPEND_PARAMETER OFF 8 UINT 0 255 0 "uint8"
+    KEY $.args.off
+
+# ============================================================================
+# call_service /turtle1/teleport_absolute  [turtlesim/srv/TeleportAbsolute]
+# ============================================================================
+COMMAND TURTLESIM TURTLE1_TELEPORT_ABSOLUTE_SRV BIG_ENDIAN "Call service /turtle1/teleport_absolute"
+  ACCESSOR JsonAccessor
+  TEMPLATE '{"op": "call_service", "service": "/turtle1/teleport_absolute", "args": {"x": 0.0, "y": 0.0, "theta": 0.0}}'
+  APPEND_PARAMETER _OP 0 STRING "call_service" "rosbridge op"
+    KEY $.op
+  APPEND_PARAMETER _SERVICE 0 STRING "/turtle1/teleport_absolute" "Service name"
+    KEY $.service
+  APPEND_PARAMETER X 32 FLOAT MIN MAX 0.0 "float32"
+    KEY $.args.x
+  APPEND_PARAMETER Y 32 FLOAT MIN MAX 0.0 "float32"
+    KEY $.args.y
+  APPEND_PARAMETER THETA 32 FLOAT MIN MAX 0.0 "float32"
+    KEY $.args.theta
+    UNITS "Radians" rad
+
+# ============================================================================
+# call_service /turtle1/teleport_relative  [turtlesim/srv/TeleportRelative]
+# ============================================================================
+COMMAND TURTLESIM TURTLE1_TELEPORT_RELATIVE_SRV BIG_ENDIAN "Call service /turtle1/teleport_relative"
+  ACCESSOR JsonAccessor
+  TEMPLATE '{"op": "call_service", "service": "/turtle1/teleport_relative", "args": {"linear": 0.0, "angular": 0.0}}'
+  APPEND_PARAMETER _OP 0 STRING "call_service" "rosbridge op"
+    KEY $.op
+  APPEND_PARAMETER _SERVICE 0 STRING "/turtle1/teleport_relative" "Service name"
+    KEY $.service
+  APPEND_PARAMETER LINEAR 32 FLOAT MIN MAX 0.0 "float32"
+    KEY $.args.linear
+  APPEND_PARAMETER ANGULAR 32 FLOAT MIN MAX 0.0 "float32"
+    KEY $.args.angular
+
+# ============================================================================
+# call_service /turtle2/set_pen  [turtlesim/srv/SetPen]
+# ============================================================================
+COMMAND TURTLESIM TURTLE2_SET_PEN_SRV BIG_ENDIAN "Call service /turtle2/set_pen"
+  ACCESSOR JsonAccessor
+  TEMPLATE '{"op": "call_service", "service": "/turtle2/set_pen", "args": {"r": 0, "g": 0, "b": 0, "width": 0, "off": 0}}'
+  APPEND_PARAMETER _OP 0 STRING "call_service" "rosbridge op"
+    KEY $.op
+  APPEND_PARAMETER _SERVICE 0 STRING "/turtle2/set_pen" "Service name"
+    KEY $.service
+  APPEND_PARAMETER R 8 UINT 0 255 0 "uint8"
+    KEY $.args.r
+  APPEND_PARAMETER G 8 UINT 0 255 0 "uint8"
+    KEY $.args.g
+  APPEND_PARAMETER B 8 UINT 0 255 0 "uint8"
+    KEY $.args.b
+  APPEND_PARAMETER WIDTH 8 UINT 0 255 0 "uint8"
+    KEY $.args.width
+  APPEND_PARAMETER OFF 8 UINT 0 255 0 "uint8"
+    KEY $.args.off
+
+# ============================================================================
+# call_service /turtle2/teleport_absolute  [turtlesim/srv/TeleportAbsolute]
+# ============================================================================
+COMMAND TURTLESIM TURTLE2_TELEPORT_ABSOLUTE_SRV BIG_ENDIAN "Call service /turtle2/teleport_absolute"
+  ACCESSOR JsonAccessor
+  TEMPLATE '{"op": "call_service", "service": "/turtle2/teleport_absolute", "args": {"x": 0.0, "y": 0.0, "theta": 0.0}}'
+  APPEND_PARAMETER _OP 0 STRING "call_service" "rosbridge op"
+    KEY $.op
+  APPEND_PARAMETER _SERVICE 0 STRING "/turtle2/teleport_absolute" "Service name"
+    KEY $.service
+  APPEND_PARAMETER X 32 FLOAT MIN MAX 0.0 "float32"
+    KEY $.args.x
+  APPEND_PARAMETER Y 32 FLOAT MIN MAX 0.0 "float32"
+    KEY $.args.y
+  APPEND_PARAMETER THETA 32 FLOAT MIN MAX 0.0 "float32"
+    KEY $.args.theta
+    UNITS "Radians" rad
+
+# ============================================================================
+# call_service /turtle2/teleport_relative  [turtlesim/srv/TeleportRelative]
+# ============================================================================
+COMMAND TURTLESIM TURTLE2_TELEPORT_RELATIVE_SRV BIG_ENDIAN "Call service /turtle2/teleport_relative"
+  ACCESSOR JsonAccessor
+  TEMPLATE '{"op": "call_service", "service": "/turtle2/teleport_relative", "args": {"linear": 0.0, "angular": 0.0}}'
+  APPEND_PARAMETER _OP 0 STRING "call_service" "rosbridge op"
+    KEY $.op
+  APPEND_PARAMETER _SERVICE 0 STRING "/turtle2/teleport_relative" "Service name"
+    KEY $.service
+  APPEND_PARAMETER LINEAR 32 FLOAT MIN MAX 0.0 "float32"
+    KEY $.args.linear
+  APPEND_PARAMETER ANGULAR 32 FLOAT MIN MAX 0.0 "float32"
+    KEY $.args.angular
+
+# ============================================================================
+# send_action_goal /turtle1/rotate_absolute  [turtlesim/action/RotateAbsolute]
+# ============================================================================
+COMMAND TURTLESIM TURTLE1_ROTATE_ABSOLUTE_ACT BIG_ENDIAN "Send action goal /turtle1/rotate_absolute"
+  ACCESSOR JsonAccessor
+  TEMPLATE '{"op": "send_action_goal", "action": "/turtle1/rotate_absolute", "action_type": "turtlesim/action/RotateAbsolute", "args": {"theta": 0.0}}'
+  APPEND_PARAMETER _OP 0 STRING "send_action_goal" "rosbridge op"
+    KEY $.op
+  APPEND_PARAMETER _ACTION 0 STRING "/turtle1/rotate_absolute" "Action name"
+    KEY $.action
+  APPEND_PARAMETER _ACTION_TYPE 0 STRING "turtlesim/action/RotateAbsolute" "Action type"
+    KEY $.action_type
+  APPEND_PARAMETER THETA 32 FLOAT MIN MAX 0.0 "float32"
+    KEY $.args.theta
+    UNITS "Radians" rad
+
+# ============================================================================
+# send_action_goal /turtle2/rotate_absolute  [turtlesim/action/RotateAbsolute]
+# ============================================================================
+COMMAND TURTLESIM TURTLE2_ROTATE_ABSOLUTE_ACT BIG_ENDIAN "Send action goal /turtle2/rotate_absolute"
+  ACCESSOR JsonAccessor
+  TEMPLATE '{"op": "send_action_goal", "action": "/turtle2/rotate_absolute", "action_type": "turtlesim/action/RotateAbsolute", "args": {"theta": 0.0}}'
+  APPEND_PARAMETER _OP 0 STRING "send_action_goal" "rosbridge op"
+    KEY $.op
+  APPEND_PARAMETER _ACTION 0 STRING "/turtle2/rotate_absolute" "Action name"
+    KEY $.action
+  APPEND_PARAMETER _ACTION_TYPE 0 STRING "turtlesim/action/RotateAbsolute" "Action type"
+    KEY $.action_type
+  APPEND_PARAMETER THETA 32 FLOAT MIN MAX 0.0 "float32"
+    KEY $.args.theta
+    UNITS "Radians" rad
+
